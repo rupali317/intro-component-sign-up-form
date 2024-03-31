@@ -40,7 +40,8 @@ export const Form = () => {
     },
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     resetFormValidation();
     checkFormValidationEmptyInputs();
     checkFormValidationInvalidInputs();
@@ -50,6 +51,7 @@ export const Form = () => {
     formValidation.FirstName.EmptyError.HasError = false;
     formValidation.LastName.EmptyError.HasError = false;
     formValidation.EmailAddress.EmptyError.HasError = false;
+    formValidation.EmailAddress.InvalidInput.HasError = false;
     formValidation.Password.EmptyError.HasError = false;
   };
 
@@ -108,7 +110,7 @@ export const Form = () => {
   };
 
   const checkFormValidationInvalidInputs = () => {
-    if (IsEmailInvalid(formData.EmailAddress)) {
+    if (!IsEmailValid(formData.EmailAddress)) {
       formValidation.EmailAddress.InvalidInput.HasError = true;
       setFormValidation((prevValidation) => {
         return {
@@ -120,8 +122,14 @@ export const Form = () => {
     }
   };
 
-  const IsEmailInvalid = (email) => {
-    return false;
+  const IsEmailValid = (email) => {
+    const validEmailRegex =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/; /*RRC: example@com <- will not work, abc-@gmail.com <- will mark as valid */
+    if (validEmailRegex.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   const handleChange = (event) => {
