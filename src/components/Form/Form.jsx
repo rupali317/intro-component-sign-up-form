@@ -1,4 +1,5 @@
 import React from "react";
+import { Input } from "../Input";
 
 export const Form = () => {
   const [formData, setFormData] = React.useState({
@@ -12,75 +13,101 @@ export const Form = () => {
     FirstName: {
       EmptyError: {
         HasError: false,
-        message: "First Name cannot be empty",
+        Message: "First Name cannot be empty",
       },
     },
     LastName: {
       EmptyError: {
         HasError: false,
-        message: "Last Name cannot be empty",
+        Message: "Last Name cannot be empty",
       },
     },
     EmailAddress: {
       EmptyError: {
         HasError: false,
-        message: "Email Address cannot be empty",
+        Message: "Email Address cannot be empty",
       },
       InvalidInput: {
         HasError: false,
-        message: "Looks like this is not an email",
+        Message: "Looks like this is not an email",
       },
     },
     Password: {
       EmptyError: {
         HasError: false,
-        message: "Password cannot be empty",
+        Message: "Password cannot be empty",
       },
     },
   });
 
   const handleSubmit = () => {
+    resetFormValidation();
+    checkFormValidationEmptyInputs();
+    checkFormValidationInvalidInputs();
+  };
+
+  const resetFormValidation = () => {
+    formValidation.FirstName.EmptyError.HasError = false;
+    formValidation.LastName.EmptyError.HasError = false;
+    formValidation.EmailAddress.EmptyError.HasError = false;
+    formValidation.Password.EmptyError.HasError = false;
+  };
+
+  const checkFormValidationEmptyInputs = () => {
     if (formData.FirstName === "") {
-      // setValidation(formValidation.FirstName.EmptyError.HasError);  <-- RRC: may not be needed
       formValidation.FirstName.EmptyError.HasError = true;
-      setFormValidation((prevValidation) => {
-        return {
-          ...prevValidation,
-          [prevValidation.FirstName.EmptyError.HasError]:
-            formValidation.FirstName.EmptyError.HasError,
-        };
+      setFormValidation((previousValidation) => {
+        return checkFormValidation(
+          previousValidation,
+          previousValidation.FirstName.EmptyError.HasError,
+          formValidation.FirstName.EmptyError.HasError
+        );
       });
     }
     if (formData.LastName === "") {
       formValidation.LastName.EmptyError.HasError = true;
-      setFormValidation((prevValidation) => {
-        return {
-          ...prevValidation,
-          [prevValidation.LastName.EmptyError.HasError]:
-            formValidation.LastName.EmptyError.HasError,
-        };
+      setFormValidation((previousValidation) => {
+        return checkFormValidation(
+          previousValidation,
+          previousValidation.LastName.EmptyError.HasError,
+          formValidation.LastName.EmptyError.HasError
+        );
       });
     }
     if (formData.EmailAddress === "") {
       formValidation.EmailAddress.EmptyError.HasError = true;
-      setFormValidation((prevValidation) => {
-        return {
-          ...prevValidation,
-          [prevValidation.EmailAddress.EmptyError.HasError]:
-            formValidation.EmailAddress.EmptyError.HasError,
-        };
+      setFormValidation((previousValidation) => {
+        return checkFormValidation(
+          previousValidation,
+          previousValidation.EmailAddress.EmptyError.HasError,
+          formValidation.EmailAddress.EmptyError.HasError
+        );
       });
     }
     if (formData.Password === "") {
       formValidation.Password.EmptyError.HasError = true;
-      setFormValidation((prevValidation) => {
-        return {
-          ...prevValidation,
-          [prevValidation.Password.EmptyError.HasError]:
-            formValidation.Password.EmptyError.HasError,
-        };
+      setFormValidation((previousValidation) => {
+        return checkFormValidation(
+          previousValidation,
+          previousValidation.Password.EmptyError.HasError,
+          formValidation.Password.EmptyError.HasError
+        );
       });
     }
+  };
+
+  const checkFormValidation = (
+    previousValidation,
+    previousValidationHasError,
+    currentValidationHasError
+  ) => {
+    return {
+      ...previousValidation,
+      [previousValidationHasError]: currentValidationHasError,
+    };
+  };
+
+  const checkFormValidationInvalidInputs = () => {
     if (IsEmailInvalid(formData.EmailAddress)) {
       formValidation.EmailAddress.InvalidInput.HasError = true;
       setFormValidation((prevValidation) => {
@@ -97,16 +124,6 @@ export const Form = () => {
     return false;
   };
 
-  //   const setValidation = (isError) => {
-  //       isError = true;
-  //       setFormValidation(prevValidation => {
-  //           return {
-  //               ...prevValidation,
-  //               [prevValidation.FirstName.EmptyError.HasError]: isError
-  //           }
-  //       });
-  //   }
-
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -120,43 +137,53 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label for="firstName">First Name</label>
-      <input
-        type="text"
-        id="firstName"
-        placeholder="Alex"
-        name="FirstName"
-        value={formData.FirstName}
-        onChange={handleChange}
+      <Input
+        Label="First Name"
+        ForId="firstName"
+        Type="text"
+        Placeholder="Alex"
+        Name="FirstName"
+        Value={formData.FirstName}
+        HasEmptyError={formValidation.FirstName.EmptyError.HasError}
+        EmptyErrorMessage={formValidation.FirstName.EmptyError.Message}
+        handleChange={handleChange}
       />
-      <i></i>
-      <label for="lastName">Last Name</label>
-      <input
-        type="text"
-        id="lastName"
-        placeholder="Williams"
-        name="LastName"
-        value={formData.LastName}
-        onChange={handleChange}
+      <Input
+        Label="Last Name"
+        ForId="lastName"
+        Type="text"
+        Placeholder="Williams"
+        Name="LastName"
+        Value={formData.LastName}
+        HasEmptyError={formValidation.LastName.EmptyError.HasError}
+        EmptyErrorMessage={formValidation.LastName.EmptyError.Message}
+        handleChange={handleChange}
       />
-      <label for="emailAddress">Email Address</label>
-      <input
-        type="email"
-        id="emailAddress"
-        placeholder="alex@williams.com"
-        name="EmailAddress"
-        value={formData.EmailAddress}
-        onChange={handleChange}
+      <Input
+        Label="Email Address"
+        ForId="emailAddress"
+        Type="email"
+        Placeholder="alex@williams.com"
+        Name="EmailAddress"
+        Value={formData.EmailAddress}
+        HasEmptyError={formValidation.EmailAddress.EmptyError.HasError}
+        EmptyErrorMessage={formValidation.EmailAddress.EmptyError.Message}
+        HasInvalidError={formValidation.EmailAddress.InvalidInput.HasError}
+        InvalidErrorMessage={formValidation.EmailAddress.InvalidInput.Message}
+        handleChange={handleChange}
       />
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="Password"
-        value={formData.Password}
-        onChange={handleChange}
+      <Input
+        Label="Password"
+        ForId="password"
+        Type="password"
+        Placeholder=""
+        Name="Password"
+        Value={formData.Password}
+        HasEmptyError={formValidation.Password.EmptyError.HasError}
+        EmptyErrorMessage={formValidation.Password.EmptyError.Message}
+        handleChange={handleChange}
       />
-      <button>claim your free trial</button>
+      <button>Claim your free trial</button>
       <p>
         By clicking the button, you are agreeing to our{" "}
         <a href="terms-and-services" target="_blank">
