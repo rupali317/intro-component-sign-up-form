@@ -124,7 +124,7 @@ export const Form = () => {
 
   const IsEmailValid = (email) => {
     const validEmailRegex =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/; /*RRC: example@com <- will not work, abc-@gmail.com <- will mark as valid */
+      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/; /*RRC: example@com <- will not work */
     if (validEmailRegex.test(email)) {
       return true;
     } else {
