@@ -1,44 +1,13 @@
 import React from "react";
 import { Input } from "../Input";
+import * as Data from "./data";
 
 export const Form = () => {
-  const [formData, setFormData] = React.useState({
-    FirstName: "",
-    LastName: "",
-    EmailAddress: "",
-    Password: "",
-  });
+  const [formData, setFormData] = React.useState(Data.formData);
 
-  const [formValidation, setFormValidation] = React.useState({
-    FirstName: {
-      EmptyError: {
-        HasError: false,
-        Message: "First Name cannot be empty",
-      },
-    },
-    LastName: {
-      EmptyError: {
-        HasError: false,
-        Message: "Last Name cannot be empty",
-      },
-    },
-    EmailAddress: {
-      EmptyError: {
-        HasError: false,
-        Message: "Email Address cannot be empty",
-      },
-      InvalidInput: {
-        HasError: false,
-        Message: "Looks like this is not an email",
-      },
-    },
-    Password: {
-      EmptyError: {
-        HasError: false,
-        Message: "Password cannot be empty",
-      },
-    },
-  });
+  const [formValidation, setFormValidation] = React.useState(
+    Data.formValidation
+  );
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -124,7 +93,7 @@ export const Form = () => {
 
   const IsEmailValid = (email) => {
     const validEmailRegex =
-      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/; /*RRC: example@com <- will not work */
+      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/; /*RRC: example@com <- will not work, #abc@gmail.com will be valid */
     if (validEmailRegex.test(email)) {
       return true;
     } else {

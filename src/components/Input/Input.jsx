@@ -19,7 +19,8 @@ export const Input = (props) => {
       </i>
       <i
         style={{
-          display: props.HasInvalidError ? "block" : "none",
+          display:
+            !props.HasEmptyError && props.HasInvalidError ? "block" : "none",
         }}
       >
         {props.InvalidErrorMessage}
