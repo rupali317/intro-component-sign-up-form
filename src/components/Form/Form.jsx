@@ -8,7 +8,104 @@ export const Form = () => {
     Password: "",
   });
 
-  const handleSubmit = () => {};
+  const [formValidation, setFormValidation] = React.useState({
+    FirstName: {
+      EmptyError: {
+        HasError: false,
+        message: "First Name cannot be empty",
+      },
+    },
+    LastName: {
+      EmptyError: {
+        HasError: false,
+        message: "Last Name cannot be empty",
+      },
+    },
+    EmailAddress: {
+      EmptyError: {
+        HasError: false,
+        message: "Email Address cannot be empty",
+      },
+      InvalidInput: {
+        HasError: false,
+        message: "Looks like this is not an email",
+      },
+    },
+    Password: {
+      EmptyError: {
+        HasError: false,
+        message: "Password cannot be empty",
+      },
+    },
+  });
+
+  const handleSubmit = () => {
+    if (formData.FirstName === "") {
+      // setValidation(formValidation.FirstName.EmptyError.HasError);  <-- RRC: may not be needed
+      formValidation.FirstName.EmptyError.HasError = true;
+      setFormValidation((prevValidation) => {
+        return {
+          ...prevValidation,
+          [prevValidation.FirstName.EmptyError.HasError]:
+            formValidation.FirstName.EmptyError.HasError,
+        };
+      });
+    }
+    if (formData.LastName === "") {
+      formValidation.LastName.EmptyError.HasError = true;
+      setFormValidation((prevValidation) => {
+        return {
+          ...prevValidation,
+          [prevValidation.LastName.EmptyError.HasError]:
+            formValidation.LastName.EmptyError.HasError,
+        };
+      });
+    }
+    if (formData.EmailAddress === "") {
+      formValidation.EmailAddress.EmptyError.HasError = true;
+      setFormValidation((prevValidation) => {
+        return {
+          ...prevValidation,
+          [prevValidation.EmailAddress.EmptyError.HasError]:
+            formValidation.EmailAddress.EmptyError.HasError,
+        };
+      });
+    }
+    if (formData.Password === "") {
+      formValidation.Password.EmptyError.HasError = true;
+      setFormValidation((prevValidation) => {
+        return {
+          ...prevValidation,
+          [prevValidation.Password.EmptyError.HasError]:
+            formValidation.Password.EmptyError.HasError,
+        };
+      });
+    }
+    if (IsEmailInvalid(formData.EmailAddress)) {
+      formValidation.EmailAddress.InvalidInput.HasError = true;
+      setFormValidation((prevValidation) => {
+        return {
+          ...prevValidation,
+          [prevValidation.EmailAddress.InvalidInput.HasError]:
+            formValidation.EmailAddress.InvalidInput.HasError,
+        };
+      });
+    }
+  };
+
+  const IsEmailInvalid = (email) => {
+    return false;
+  };
+
+  //   const setValidation = (isError) => {
+  //       isError = true;
+  //       setFormValidation(prevValidation => {
+  //           return {
+  //               ...prevValidation,
+  //               [prevValidation.FirstName.EmptyError.HasError]: isError
+  //           }
+  //       });
+  //   }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,6 +129,7 @@ export const Form = () => {
         value={formData.FirstName}
         onChange={handleChange}
       />
+      <i></i>
       <label for="lastName">Last Name</label>
       <input
         type="text"
