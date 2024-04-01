@@ -104,16 +104,36 @@ export const Form = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFormData((prevformData) => {
+    setFormData((prevFormData) => {
       return {
-        ...prevformData,
+        ...prevFormData,
         [name]: value,
       };
     });
   };
 
+  // const Inputs = Data.InputData.map((item) => {
+  //   return (
+  //     <Input
+  //       key={item.Id}
+  //       Label={item.Label}
+  //       ForId={item.ForId}
+  //       Type={item.Type}
+  //       Placeholder={item.Placeholder}
+  //       Name={item.Name}
+  //       Value={item.Value}
+  //       HasEmptyError={item.HasEmptyError}
+  //       EmptyErrorMessage={item.EmptyErrorMessage}
+  //       HasInvalidError={item.HasInvalidError}
+  //       InvalidErrorMessage={item.InvalidErrorMessage}
+  //       handleChange={handleChange}
+  //     />
+  //   );
+  // });
+
   return (
     <form onSubmit={handleSubmit}>
+      {/* {Inputs} */}
       <Input
         Label="First Name"
         ForId="firstName"
