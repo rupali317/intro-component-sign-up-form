@@ -1,7 +1,7 @@
 export const Input = (props) => {
   return (
     <>
-      <label for={props.ForId}>{props.Label}</label>
+      <label htmlFor={props.ForId}>{props.Label}</label>
       <input
         type={props.Text}
         id={props.ForId}
