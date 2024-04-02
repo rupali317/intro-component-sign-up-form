@@ -17,51 +17,86 @@ export const Form = () => {
   };
 
   const resetFormValidation = () => {
-    formValidation.FirstName.EmptyError.HasError = false;
-    formValidation.LastName.EmptyError.HasError = false;
-    formValidation.EmailAddress.EmptyError.HasError = false;
-    formValidation.EmailAddress.InvalidInput.HasError = false;
-    formValidation.Password.EmptyError.HasError = false;
+    // formValidation.FirstName.EmptyError.HasError = false;
+    // formValidation.LastName.EmptyError.HasError = false;
+    // formValidation.EmailAddress.EmptyError.HasError = false;
+    // formValidation.EmailAddress.InvalidInput.HasError = false;
+    // formValidation.Password.EmptyError.HasError = false;
+    setFormValidation((previousValidation) => {
+      return checkFormValidation(
+        previousValidation,
+        previousValidation.FirstName.EmptyError.HasError,
+        false
+      );
+    });
+    setFormValidation((previousValidation) => {
+      return checkFormValidation(
+        previousValidation,
+        previousValidation.LastName.EmptyError.HasError,
+        false
+      );
+    });
+    setFormValidation((previousValidation) => {
+      return checkFormValidation(
+        previousValidation,
+        previousValidation.EmailAddress.EmptyError.HasError,
+        false
+      );
+    });
+    setFormValidation((previousValidation) => {
+      return checkFormValidation(
+        previousValidation,
+        previousValidation.EmailAddress.InvalidInput.HasError,
+        false
+      );
+    });
+    setFormValidation((previousValidation) => {
+      return checkFormValidation(
+        previousValidation,
+        previousValidation.Password.EmptyError.HasError,
+        false
+      );
+    });
   };
 
   const checkFormValidationEmptyInputs = () => {
     if (formData.FirstName === "") {
-      formValidation.FirstName.EmptyError.HasError = true;
+      //formValidation.FirstName.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
         return checkFormValidation(
           previousValidation,
           previousValidation.FirstName.EmptyError.HasError,
-          formValidation.FirstName.EmptyError.HasError
+          true
         );
       });
     }
     if (formData.LastName === "") {
-      formValidation.LastName.EmptyError.HasError = true;
+      //formValidation.LastName.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
         return checkFormValidation(
           previousValidation,
           previousValidation.LastName.EmptyError.HasError,
-          formValidation.LastName.EmptyError.HasError
+          true
         );
       });
     }
     if (formData.EmailAddress === "") {
-      formValidation.EmailAddress.EmptyError.HasError = true;
+      //formValidation.EmailAddress.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
         return checkFormValidation(
           previousValidation,
           previousValidation.EmailAddress.EmptyError.HasError,
-          formValidation.EmailAddress.EmptyError.HasError
+          true
         );
       });
     }
     if (formData.Password === "") {
-      formValidation.Password.EmptyError.HasError = true;
+      //formValidation.Password.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
         return checkFormValidation(
           previousValidation,
           previousValidation.Password.EmptyError.HasError,
-          formValidation.Password.EmptyError.HasError
+          true
         );
       });
     }
