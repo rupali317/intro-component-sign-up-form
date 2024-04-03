@@ -16,111 +16,137 @@ export const Form = () => {
     checkFormValidationInvalidInputs();
   };
 
+  // RRC: Ask why [previousValidation.FirstName.EmptyError.HasError]: false, will not work inspite of the []
   const resetFormValidation = () => {
-    // formValidation.FirstName.EmptyError.HasError = false;
-    // formValidation.LastName.EmptyError.HasError = false;
-    // formValidation.EmailAddress.EmptyError.HasError = false;
-    // formValidation.EmailAddress.InvalidInput.HasError = false;
-    // formValidation.Password.EmptyError.HasError = false;
     setFormValidation((previousValidation) => {
-      return checkFormValidation(
-        previousValidation,
-        previousValidation.FirstName.EmptyError.HasError,
-        false
-      );
+      return {
+        ...previousValidation,
+        FirstName: {
+          EmptyError: {
+            ...previousValidation.FirstName.EmptyError,
+            HasError: false,
+          },
+        },
+      };
     });
     setFormValidation((previousValidation) => {
-      return checkFormValidation(
-        previousValidation,
-        previousValidation.LastName.EmptyError.HasError,
-        false
-      );
+      return {
+        ...previousValidation,
+        LastName: {
+          EmptyError: {
+            ...previousValidation.LastName.EmptyError,
+            HasError: false,
+          },
+        },
+      };
     });
     setFormValidation((previousValidation) => {
-      return checkFormValidation(
-        previousValidation,
-        previousValidation.EmailAddress.EmptyError.HasError,
-        false
-      );
+      return {
+        ...previousValidation,
+        EmailAddress: {
+          EmptyError: {
+            ...previousValidation.EmailAddress.EmptyError,
+            HasError: false,
+          },
+          InvalidInput: {
+            ...previousValidation.EmailAddress.InvalidInput,
+            HasError: false,
+          },
+        },
+      };
     });
+    // setFormValidation((previousValidation) => {
+    //   return {
+    //     ...previousValidation,
+    //     EmailAddress: {
+    //       InvalidInput: {
+    //         ...previousValidation.EmailAddress.InvalidInput,
+    //         HasError: false,
+    //       },
+    //     },
+    //   };
+    // });
     setFormValidation((previousValidation) => {
-      return checkFormValidation(
-        previousValidation,
-        previousValidation.EmailAddress.InvalidInput.HasError,
-        false
-      );
-    });
-    setFormValidation((previousValidation) => {
-      return checkFormValidation(
-        previousValidation,
-        previousValidation.Password.EmptyError.HasError,
-        false
-      );
+      return {
+        ...previousValidation,
+        Password: {
+          EmptyError: {
+            ...previousValidation.Password.EmptyError,
+            HasError: false,
+          },
+        },
+      };
     });
   };
 
   const checkFormValidationEmptyInputs = () => {
     if (formData.FirstName === "") {
-      //formValidation.FirstName.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
-        return checkFormValidation(
-          previousValidation,
-          previousValidation.FirstName.EmptyError.HasError,
-          true
-        );
+        return {
+          ...previousValidation,
+          FirstName: {
+            EmptyError: {
+              ...previousValidation.FirstName.EmptyError,
+              HasError: true,
+            },
+          },
+        };
       });
     }
     if (formData.LastName === "") {
-      //formValidation.LastName.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
-        return checkFormValidation(
-          previousValidation,
-          previousValidation.LastName.EmptyError.HasError,
-          true
-        );
+        return {
+          ...previousValidation,
+          LastName: {
+            EmptyError: {
+              ...previousValidation.LastName.EmptyError,
+              HasError: true,
+            },
+          },
+        };
       });
     }
     if (formData.EmailAddress === "") {
-      //formValidation.EmailAddress.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
-        return checkFormValidation(
-          previousValidation,
-          previousValidation.EmailAddress.EmptyError.HasError,
-          true
-        );
+        return {
+          ...previousValidation,
+          EmailAddress: {
+            ...previousValidation.EmailAddress,
+            EmptyError: {
+              ...previousValidation.EmailAddress.EmptyError,
+              HasError: true,
+            },
+          },
+        };
       });
     }
     if (formData.Password === "") {
-      //formValidation.Password.EmptyError.HasError = true;
       setFormValidation((previousValidation) => {
-        return checkFormValidation(
-          previousValidation,
-          previousValidation.Password.EmptyError.HasError,
-          true
-        );
+        return {
+          ...previousValidation,
+          Password: {
+            EmptyError: {
+              ...previousValidation.Password.EmptyError,
+              HasError: true,
+            },
+          },
+        };
       });
     }
-  };
-
-  const checkFormValidation = (
-    previousValidation,
-    previousValidationHasError,
-    currentValidationHasError
-  ) => {
-    return {
-      ...previousValidation,
-      [previousValidationHasError]: currentValidationHasError,
-    };
   };
 
   const checkFormValidationInvalidInputs = () => {
     if (!IsEmailValid(formData.EmailAddress)) {
-      formValidation.EmailAddress.InvalidInput.HasError = true;
-      setFormValidation((prevValidation) => {
+      setFormValidation((previousValidation) => {
         return {
-          ...prevValidation,
-          [prevValidation.EmailAddress.InvalidInput.HasError]:
-            formValidation.EmailAddress.InvalidInput.HasError,
+          ...previousValidation,
+          EmailAddress: {
+            ...previousValidation.EmailAddress,
+            InvalidInput: {
+              ...previousValidation.EmailAddress.InvalidInput,
+              HasError: true,
+            },
+          },
         };
       });
     }
@@ -146,25 +172,6 @@ export const Form = () => {
       };
     });
   };
-
-  // const Inputs = Data.InputData.map((item) => {
-  //   return (
-  //     <Input
-  //       key={item.Id}
-  //       Label={item.Label}
-  //       ForId={item.ForId}
-  //       Type={item.Type}
-  //       Placeholder={item.Placeholder}
-  //       Name={item.Name}
-  //       Value={item.Value}
-  //       HasEmptyError={item.HasEmptyError}
-  //       EmptyErrorMessage={item.EmptyErrorMessage}
-  //       HasInvalidError={item.HasInvalidError}
-  //       InvalidErrorMessage={item.InvalidErrorMessage}
-  //       handleChange={handleChange}
-  //     />
-  //   );
-  // });
 
   return (
     <form onSubmit={handleSubmit}>
