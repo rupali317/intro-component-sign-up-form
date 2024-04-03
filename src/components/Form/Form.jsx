@@ -27,22 +27,12 @@ export const Form = () => {
             HasError: false,
           },
         },
-      };
-    });
-    setFormValidation((previousValidation) => {
-      return {
-        ...previousValidation,
         LastName: {
           EmptyError: {
             ...previousValidation.LastName.EmptyError,
             HasError: false,
           },
         },
-      };
-    });
-    setFormValidation((previousValidation) => {
-      return {
-        ...previousValidation,
         EmailAddress: {
           EmptyError: {
             ...previousValidation.EmailAddress.EmptyError,
@@ -53,22 +43,6 @@ export const Form = () => {
             HasError: false,
           },
         },
-      };
-    });
-    // setFormValidation((previousValidation) => {
-    //   return {
-    //     ...previousValidation,
-    //     EmailAddress: {
-    //       InvalidInput: {
-    //         ...previousValidation.EmailAddress.InvalidInput,
-    //         HasError: false,
-    //       },
-    //     },
-    //   };
-    // });
-    setFormValidation((previousValidation) => {
-      return {
-        ...previousValidation,
         Password: {
           EmptyError: {
             ...previousValidation.Password.EmptyError,
@@ -164,7 +138,6 @@ export const Form = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
@@ -172,6 +145,25 @@ export const Form = () => {
       };
     });
   };
+
+  // const Inputs = Data.InputData.map((item) => {
+  //   return (
+  //     <Input
+  //       key={item.Id}
+  //       Label={item.Label}
+  //       ForId={item.ForId}
+  //       Type={item.Type}
+  //       Placeholder={item.Placeholder}
+  //       Name={item.Name}
+  //       Value={item.Value}
+  //       HasEmptyError={item.HasEmptyError}
+  //       EmptyErrorMessage={item.EmptyErrorMessage}
+  //       HasInvalidError={item.HasInvalidError}
+  //       InvalidErrorMessage={item.InvalidErrorMessage}
+  //       handleChange={handleChange}
+  //     />
+  //   );
+  // });
 
   return (
     <form onSubmit={handleSubmit}>

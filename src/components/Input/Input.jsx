@@ -3,7 +3,7 @@ export const Input = (props) => {
     <>
       <label htmlFor={props.ForId}>{props.Label}</label>
       <input
-        type={props.Text}
+        type={props.Type}
         id={props.ForId}
         placeholder={props.Placeholder}
         name={props.Name}
