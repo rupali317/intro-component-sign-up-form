@@ -43,7 +43,20 @@ export const BaseStyles = createGlobalStyle`
         --letter-spacing-l: -0.0325rem; /* -0.52px */
 
         /* Spacing */
-        /* 6px, 8px, 11px, 15px, 16px, 17px, 18px, 19.41px, 20px, 24px, 32px, 40px, 45px, 64px = 14 spaces */
+        --space-xs-1: 0.375rem; /* 6px */
+        --space-xs-2: 0.5rem; /* 8px */
+        --space-s-1: 0.6875rem; /* 11px */
+        --space-s-2: 0.9375rem; /* 15px */
+        --space-base: 1rem; /* 16px */
+        --space-m-1: 1.0625rem; /* 17px */
+        --space-m-2: 1.125rem; /* 18px */
+        --space-m-3: 1.213125rem; /* 19.41px */
+        --space-l-1: 1.25rem; /* 20px */
+        --space-l-2: 1.5rem; /* 24px */
+        --space-l-3: 2rem; /* 32px */
+        --space-xl-1: 2.5rem; /* 40px */
+        --space-xl-2: 2.8125rem; /* 45px */
+        --space-xl-3: 4rem; /* 64px */
 
         /* Borders */
         --border-radius-none: 0rem;
