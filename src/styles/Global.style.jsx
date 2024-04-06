@@ -3,15 +3,15 @@ import { createGlobalStyle } from "styled-components";
 export const BaseStyles = createGlobalStyle`
     :root {
         /* Colors */
-        --color-primary: hsl(0, 100, 74); /* #FF7979 */
-        --color-secondary: hsl(248, 33, 49); /* #5E54A4 */
-        --color-action-1: hsl(154, 59, 51); /* #38CC8B */
-        --color-action-2: hsl(154, 65, 68); /* #77E2B3 */
-        --color-neutral-1: hsl(0, 0, 100); /* #ffffff */
-        --color-neutral-2: hsl(248, 9, 26, 100%); /* #3D3B48 */
-        --color-neutral-3: hsl(248, 9, 26, 75%); /* #3D3B48 */
-        --color-neutral-4: hsl(0, 0, 87); /* #DEDEDE */
-        --color-neutral-5: hsl(247, 25, 77); /* #BAB7D4 */
+        --color-primary: hsl(0, 100%, 74%); /* #FF7979 */
+        --color-secondary: hsl(248, 33%, 49%); /* #5E54A4 */
+        --color-action-1: hsl(154, 59%, 51%); /* #38CC8B */
+        --color-action-2: hsl(154, 65%, 68%); /* #77E2B3 */
+        --color-neutral-1: hsl(0, 0%, 100%); /* #ffffff */
+        --color-neutral-2: hsl(248, 9%, 26%, 100%); /* #3D3B48 */
+        --color-neutral-3: hsl(248, 9%, 26%, 75%); /* #3D3B48 */
+        --color-neutral-4: hsl(0, 0%, 87%); /* #DEDEDE */
+        --color-neutral-5: hsl(247, 25%, 77%); /* #BAB7D4 */
 
         /* Typography */
         --font-weight-regular: 400;
@@ -66,8 +66,8 @@ export const BaseStyles = createGlobalStyle`
         --border-width-m: 0.125rem; /* 2px */
 
         /* Shadows */
-        --box-shadow-1: 0rem 0.5rem 0rem 0rem hsl(0, 0, 0, 14.69%); /* 0px 8px 0px 0px */
-        --box-shadow-2: 0rem -0.25rem 0rem 0rem hsl(0, 0, 0, 9.09%); /* 0px -4px 0px 0px */
+        --box-shadow-1: 0rem 0.5rem 0rem 0rem hsl(0, 0%, 0%, 14.69%); /* 0px 8px 0px 0px */
+        --box-shadow-2: 0rem -0.25rem 0rem 0rem hsl(0, 0%, 0%, 9.09%); /* 0px -4px 0px 0px */
     }
 
     @font-face {

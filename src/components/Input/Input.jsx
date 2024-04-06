@@ -1,8 +1,10 @@
+import * as InputStyle from "../../styles/Input.style";
+
 export const Input = (props) => {
   return (
     <>
-      <label htmlFor={props.ForId}>{props.Label}</label>
-      <input
+      <InputStyle.Label htmlFor={props.ForId}>{props.Label}</InputStyle.Label>
+      <InputStyle.Input
         type={props.Type}
         id={props.ForId}
         placeholder={props.Placeholder}
@@ -10,22 +12,12 @@ export const Input = (props) => {
         value={props.Value}
         onChange={props.handleChange}
       />
-      <i
-        style={{
-          display: props.HasEmptyError ? "block" : "none",
-        }}
-      >
+      <InputStyle.Error className={props.HasEmptyError ? "show-error" : "hide-error"}>
         {props.EmptyErrorMessage}
-      </i>
-      <i
-        style={{
-          display:
-            !props.HasEmptyError && props.HasInvalidError ? "block" : "none",
-        }}
-      >
+      </InputStyle.Error>
+      <InputStyle.Error className={!props.HasEmptyError && props.HasInvalidError ? "show-error" : "hide-error"}>
         {props.InvalidErrorMessage}
-      </i>
-      {/*RRC: Change from style to classname?*/}
+      </InputStyle.Error>
     </>
   );
 };
