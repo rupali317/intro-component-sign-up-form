@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "../Input";
 import * as Data from "./data";
+import * as FormStyles from "../../styles/Form.style";
 
 export const Form = () => {
   const [formData, setFormData] = React.useState(Data.formData);
@@ -166,7 +167,7 @@ export const Form = () => {
   // });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <FormStyles.Form onSubmit={handleSubmit}>
       {/* {Inputs} */}
       <Input
         Label="First Name"
@@ -214,13 +215,13 @@ export const Form = () => {
         EmptyErrorMessage={formValidation.Password.EmptyError.Message}
         handleChange={handleChange}
       />
-      <button>Claim your free trial</button>
-      <p>
+      <FormStyles.Button>Claim your free trial</FormStyles.Button>
+      <FormStyles.Paragraph>
         By clicking the button, you are agreeing to our{" "}
         <a href="terms-and-services" target="_blank">
           Terms and Services
         </a>
-      </p>
-    </form>
+      </FormStyles.Paragraph>
+    </FormStyles.Form>
   );
 };

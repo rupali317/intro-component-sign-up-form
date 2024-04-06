@@ -62,6 +62,7 @@ export const BaseStyles = createGlobalStyle`
         --border-radius-none: 0rem;
         --border-radius-soft: 0.3125rem; /* 5px */
         --border-radius-medium: 0.625rem; /* 10px */
+        --border-width-none: 0rem;
         --border-width-s: 0.0625rem; /* 1px */
         --border-width-m: 0.125rem; /* 2px */
 
@@ -182,5 +183,22 @@ export const ResetStyles = createGlobalStyle`
 export const DefaultStyles = createGlobalStyle`
     body {
         font-family: "Poppins";
+        font-style: var(--font-style-normal);
+        background-color: var(--color-primary);
+        max-width: 20.4375rem; /* 327px */
+        letter-spacing: var(--letter-spacing-none);
+    }
+
+    a {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--font-size-xs);
+        line-height: var(--line-height-xs);
+        color: var(--color-primary);
+        text-align: center;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 `;

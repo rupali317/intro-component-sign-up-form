@@ -1,7 +1,20 @@
 import { styled } from "styled-components";
 
-export const Label = styled.label``;
+export const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs-1);
+  min-width: 17.4375rem; /* 279px */
+`;
 
+export const Label = styled.label`
+  color: var(--color-neutral-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-base);
+`;
+
+//RRC: Find out if caret width and distance between caret and text can be managed?
 export const Input = styled.input`
   border: var(--border-width-s) solid var(--color-neutral-4);
   border-radius: var(--border-radius-soft);
@@ -11,7 +24,7 @@ export const Input = styled.input`
   font-weight: var(--font-weight-semi-bold);
   letter-spacing: var(--letter-spacing-xs);
   line-height: var(--line-height-base);
-  caret-color: var(--color-secondary); //RRC: Find out if caret width and distance between caret and text can be managed?
+  caret-color: var(--color-secondary);
 
   &::placeholder {
     color: var(--color-neutral-3);
@@ -24,11 +37,18 @@ export const Input = styled.input`
 `;
 
 export const Error = styled.i`
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  font-style: var(--font-style-italic);
+  line-height: var(--line-height-normal);
+  text-align: right;
+
   &.show-error {
-      display: block;
+    display: block;
   }
 
   &.hide-error {
-      display: none;
+    display: none;
   }
 `;
