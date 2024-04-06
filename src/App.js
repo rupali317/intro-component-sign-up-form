@@ -1,9 +1,13 @@
 import { Form } from "./components/Form";
+import * as GlobalStyles from "./styles/Global.style";
 import { FreeTrial } from "./components/FreeTrial";
 
 function App() {
   return (
     <>
+      <GlobalStyles.BaseStyles />
+      <GlobalStyles.ResetStyles />
+      <GlobalStyles.DefaultStyles />
       <section>
         <h1>Learn to code by watching others</h1>
         <p>
