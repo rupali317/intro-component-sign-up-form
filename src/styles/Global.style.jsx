@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, styled } from "styled-components";
 
 export const BaseStyles = createGlobalStyle`
     :root {
@@ -39,8 +39,8 @@ export const BaseStyles = createGlobalStyle`
         --letter-spacing-xs: 0.015625rem; /* 0.25px */
         --letter-spacing-s: 0.016875rem; /* 0.27px */
         --letter-spacing-base: 0.0625rem; /* 1px */
-        --letter-spacing-m: -0.018125rem; /* -0.29px */
-        --letter-spacing-l: -0.0325rem; /* -0.52px */
+        --letter-spacing-negative-s: -0.018125rem; /* -0.29px */
+        --letter-spacing-negative-xs: -0.0325rem; /* -0.52px */
 
         /* Spacing */
         --space-xs-1: 0.375rem; /* 6px */
@@ -187,6 +187,13 @@ export const DefaultStyles = createGlobalStyle`
         background-color: var(--color-primary);
         max-width: 20.4375rem; /* 327px */
         letter-spacing: var(--letter-spacing-none);
+        margin: var(--space-l-3) auto;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl-3);
     }
 
     a {
@@ -201,4 +208,31 @@ export const DefaultStyles = createGlobalStyle`
     a:hover {
         text-decoration: underline;
     }
+`;
+
+export const IntroSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+  color: var(--color-neutral-1);
+  text-align: center;
+
+  h1 {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-l);
+    letter-spacing: var(--letter-spacing-negative-s);
+  }
+
+  p {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-base);
+  }
+`;
+
+export const FormSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l-2);
 `;
