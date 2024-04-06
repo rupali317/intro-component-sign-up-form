@@ -69,4 +69,44 @@ export const BaseStyles = createGlobalStyle`
         --box-shadow-1: 0rem 0.5rem 0rem 0rem hsl(0, 0, 0, 14.69%); /* 0px 8px 0px 0px */
         --box-shadow-2: 0rem -0.25rem 0rem 0rem hsl(0, 0, 0, 9.09%); /* 0px -4px 0px 0px */
     }
+
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 700;
+        src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 600;
+        src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 500;
+        src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 500;
+        src: url("/fonts/Poppins-MediumItalic.ttf") format("truetype");
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 400;
+        src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+        font-style: normal;
+        font-display: swap;
+    }
 `;
