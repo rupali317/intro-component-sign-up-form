@@ -72,6 +72,7 @@ export const BaseStyles = createGlobalStyle`
         /* Shadows */
         --box-shadow-1: 0rem 0.5rem 0rem 0rem hsl(0, 0%, 0%, 14.69%); /* 0px 8px 0px 0px */
         --box-shadow-2: 0rem -0.25rem 0rem 0rem hsl(0, 0%, 0%, 9.09%); /* 0px -4px 0px 0px */
+        --box-shadow-3: 0rem 0rem 0rem 0.25rem var(--color-primary-2)
     }
 
     @font-face {
@@ -221,6 +222,11 @@ export const DefaultStyles = createGlobalStyle`
 
     a:hover {
         text-decoration: underline;
+    }
+
+    a:focus-visible {
+        outline: none;
+        box-shadow: var(--box-shadow-3);
     }
 
     @media (min-width: ${DesktopWidth}) {

@@ -35,6 +35,11 @@ export const Button = styled.button`
     cursor: pointer;
   }
 
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--box-shadow-3);
+  }
+
   @media (min-width: ${DesktopWidth}) {
     min-width: 28.75rem; /* 460px */
     margin-top: var(--space-l-1);
