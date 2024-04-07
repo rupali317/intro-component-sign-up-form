@@ -4,10 +4,10 @@ import { DesktopWidth } from "../constants/Breakpoints";
 export const BaseStyles = createGlobalStyle`
     :root {
         /* Colors */
-        --color-primary: hsl(0, 40%, 48%); /* #FF7979 */
-        --color-secondary: hsl(248, 34%, 37%); /* #5E54A4 */
-        --color-action-1: hsl(154, 60%, 30%); /* #38CC8B */
-        --color-action-2: hsl(154, 65%, 68%); /* #77E2B3 */
+        --color-primary: hsl(0, 58%, 51%); /* 	#cb3a3a */
+        --color-secondary: hsl(248, 54%, 38%); /* #3b2d95 */
+        --color-action-1: hsl(154, 74%, 30%); /* #148554 */
+        --color-action-2: hsl(154, 74%, 40%); /* #1bb170 */
         --color-neutral-1: hsl(0, 0%, 100%); /* #ffffff */
         --color-neutral-2: hsl(248, 9%, 26%, 100%); /* #3D3B48 */
         --color-neutral-3: hsl(248, 9%, 26%, 75%); /* #3D3B48 */
