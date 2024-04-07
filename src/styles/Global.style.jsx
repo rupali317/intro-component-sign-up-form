@@ -4,8 +4,9 @@ import { DesktopWidth } from "../constants/Breakpoints";
 export const BaseStyles = createGlobalStyle`
     :root {
         /* Colors */
-        --color-primary: hsl(0, 58%, 51%); /* 	#cb3a3a */
-        --color-secondary: hsl(248, 54%, 38%); /* #3b2d95 */
+        --color-primary-1: hsl(0, 58%, 51%); /* #cb3a3a */
+        --color-primary-2: hsl(0, 100%, 74%); /* #ff7a7a */
+        --color-secondary: hsl(248, 33%, 49%); /* #5e54a4 */
         --color-action-1: hsl(154, 74%, 30%); /* #148554 */
         --color-action-2: hsl(154, 74%, 40%); /* #1bb170 */
         --color-neutral-1: hsl(0, 0%, 100%); /* #ffffff */
@@ -13,6 +14,7 @@ export const BaseStyles = createGlobalStyle`
         --color-neutral-3: hsl(248, 9%, 26%, 75%); /* #3D3B48 */
         --color-neutral-4: hsl(0, 0%, 87%); /* #DEDEDE */
         --color-neutral-5: hsl(247, 25%, 77%); /* #BAB7D4 */
+        --color-neutral-6: hsl(0, 0%, 20%) /* #333333 */
 
         /* Typography */
         --font-weight-regular: 400;
@@ -186,7 +188,7 @@ export const DefaultStyles = createGlobalStyle`
         font-family: "Poppins";
         font-style: var(--font-style-normal);
         font-weight: var(--font-weight-regular);
-        background-color: var(--color-primary);
+        background-color: var(--color-primary-2);
         letter-spacing: var(--letter-spacing-none);
         display: flex;
         justify-content: center;
@@ -212,7 +214,7 @@ export const DefaultStyles = createGlobalStyle`
         font-weight: var(--font-weight-bold);
         font-size: var(--font-size-xs);
         line-height: var(--line-height-xs);
-        color: var(--color-primary);
+        color: var(--color-primary-1);
         text-align: center;
         text-decoration: none;
     }
@@ -233,7 +235,7 @@ export const IntroSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: var(--space-base);
-  color: var(--color-neutral-1);
+  color: var(--color-neutral-2);
   text-align: center;
   max-width: 20.4375rem; /* 327px */
 

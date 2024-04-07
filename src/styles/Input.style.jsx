@@ -47,7 +47,7 @@ export const Input = styled.input`
 `;
 
 export const Error = styled.i`
-  color: var(--color-primary);
+  color: var(--color-primary-1);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   font-style: var(--font-style-italic);
