@@ -185,6 +185,7 @@ export const DefaultStyles = createGlobalStyle`
     body {
         font-family: "Poppins";
         font-style: var(--font-style-normal);
+        font-weight: var(--font-weight-regular);
         background-color: var(--color-primary);
         letter-spacing: var(--letter-spacing-none);
         display: flex;

@@ -45,4 +45,12 @@ export const Error = styled.i`
   line-height: var(--line-height-normal);
   text-align: right;
   margin-top: var(--space-xs-1);
+
+  &.show-error {
+    display: block;
+  }
+
+  &.hide-error {
+    display: none;
+  }
 `;

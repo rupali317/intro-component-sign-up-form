@@ -14,7 +14,11 @@ export const Input = (props) => {
           onChange={props.handleChange}
         />
       </InputStyle.Section>
-      <InputStyle.Error>{props.ErrorMessage}</InputStyle.Error>
+      <InputStyle.Error
+        className={props.ErrorMessage === "" ? "hide-error" : "show-error"}
+      >
+        {props.ErrorMessage}
+      </InputStyle.Error>
     </>
   );
 };
