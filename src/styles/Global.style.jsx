@@ -244,9 +244,9 @@ export const IntroSection = styled.section`
   }
 
   @media (min-width: ${DesktopWidth}) {
-    gap: var(--space-s-1);
+    gap: var(--space-l-3);
     text-align: left;
-    max-width: 33.75rem; /* 540px */
+    max-width: 32.8125rem; /* 525px */
 
     h1 {
       font-size: var(--font-size-xl);

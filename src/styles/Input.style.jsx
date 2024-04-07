@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { DesktopWidth } from "../constants/Breakpoints";
 
 export const Section = styled.section`
   display: flex;
@@ -6,6 +7,10 @@ export const Section = styled.section`
   gap: var(--space-xs-1);
   min-width: 17.4375rem; /* 279px */
   margin-top: var(--space-base);
+
+  @media (min-width: ${DesktopWidth}) {
+    margin-top: var(--space-l-1);
+  }
 `;
 
 export const Label = styled.label`
@@ -34,6 +39,10 @@ export const Input = styled.input`
   &:focus-visible {
     outline: none;
     border-color: var(--color-secondary);
+  }
+
+  @media (min-width: ${DesktopWidth}) {
+    padding: var(--space-s-2) var(--space-l-3);
   }
 `;
 

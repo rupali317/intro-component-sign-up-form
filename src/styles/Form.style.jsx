@@ -8,6 +8,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   background-color: var(--color-neutral-1);
+
+  @media (min-width: ${DesktopWidth}) {
+    padding: var(--space-l-1) var(--space-xl-1) var(--space-xl-1)
+      var(--space-xl-1);
+  }
 `;
 
 export const Button = styled.button`
@@ -23,7 +28,7 @@ export const Button = styled.button`
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-base);
   border-width: var(--border-width-none);
-  margin-top: var(--space-base);
+  margin-top: var(--space-l-1);
 
   &:hover {
     background-color: var(--color-action-2);
@@ -42,4 +47,8 @@ export const Paragraph = styled.p`
   color: var(--color-neutral-5);
   margin-top: var(--space-xs-2);
   text-align: center;
+
+  @media (min-width: ${DesktopWidth}) {
+    line-height: var(--line-height-base);
+  }
 `;
