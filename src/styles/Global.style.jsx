@@ -203,6 +203,11 @@ export const DefaultStyles = createGlobalStyle`
         align-items: center;
     }
 
+    picture {
+        position: absolute;
+        z-index: -1;
+    }
+
     a {
         font-weight: var(--font-weight-bold);
         font-size: var(--font-size-xs);
