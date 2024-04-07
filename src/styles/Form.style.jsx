@@ -35,4 +35,5 @@ export const Paragraph = styled.p`
   line-height: var(--line-height-xs);
   color: var(--color-neutral-5);
   margin-top: -8px;
+  text-align: center;
 `;

@@ -43,12 +43,4 @@ export const Error = styled.i`
   font-style: var(--font-style-italic);
   line-height: var(--line-height-normal);
   text-align: right;
-
-  &.show-error {
-    display: block;
-  }
-
-  &.hide-error {
-    display: none;
-  }
 `;
