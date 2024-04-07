@@ -28,7 +28,7 @@ export const Button = styled.button`
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-base);
   border-width: var(--border-width-none);
-  margin-top: var(--space-l-1);
+  margin-top: var(--space-base);
 
   &:hover {
     background-color: var(--color-action-2);
@@ -37,6 +37,7 @@ export const Button = styled.button`
 
   @media (min-width: ${DesktopWidth}) {
     min-width: 28.75rem; /* 460px */
+    margin-top: var(--space-l-1);
   }
 `;
 
