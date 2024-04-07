@@ -1,4 +1,5 @@
 import { createGlobalStyle, styled } from "styled-components";
+import { DesktopWidth } from "../constants/Breakpoints";
 
 export const BaseStyles = createGlobalStyle`
     :root {
@@ -185,15 +186,18 @@ export const DefaultStyles = createGlobalStyle`
         font-family: "Poppins";
         font-style: var(--font-style-normal);
         background-color: var(--color-primary);
-        max-width: 20.4375rem; /* 327px */
         letter-spacing: var(--letter-spacing-none);
-        margin: var(--space-l-3) auto;
+        display: flex;
+        justify-content: center;
+        align-items: center
     }
 
     main {
         display: flex;
         flex-direction: column;
         gap: var(--space-xl-3);
+        justify-content: center;
+        align-items: center;
     }
 
     a {
@@ -208,6 +212,13 @@ export const DefaultStyles = createGlobalStyle`
     a:hover {
         text-decoration: underline;
     }
+
+    @media (min-width: ${DesktopWidth}) {
+        main {
+            flex-direction: row;
+            gap: var(--space-xl-2);
+        }
+    }
 `;
 
 export const IntroSection = styled.section`
@@ -216,6 +227,7 @@ export const IntroSection = styled.section`
   gap: var(--space-base);
   color: var(--color-neutral-1);
   text-align: center;
+  max-width: 20.4375rem; /* 327px */
 
   h1 {
     font-size: var(--font-size-l);
@@ -229,10 +241,27 @@ export const IntroSection = styled.section`
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-base);
   }
+
+  @media (min-width: ${DesktopWidth}) {
+    gap: var(--space-s-1);
+    text-align: left;
+    max-width: 33.75rem; /* 540px */
+
+    h1 {
+      font-size: var(--font-size-xl);
+      line-height: var(--line-height-xl);
+      letter-spacing: var(--letter-spacing-negative-xs);
+    }
+  }
 `;
 
 export const FormSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: var(--space-l-2);
+  max-width: 20.4375rem; /* 327px */
+
+  @media (min-width: ${DesktopWidth}) {
+    max-width: 33.75rem; /* 540px */
+  }
 `;

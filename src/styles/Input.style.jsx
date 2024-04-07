@@ -5,6 +5,7 @@ export const Section = styled.section`
   flex-direction: column;
   gap: var(--space-xs-1);
   min-width: 17.4375rem; /* 279px */
+  margin-top: var(--space-base);
 `;
 
 export const Label = styled.label`
@@ -43,4 +44,5 @@ export const Error = styled.i`
   font-style: var(--font-style-italic);
   line-height: var(--line-height-normal);
   text-align: right;
+  margin-top: var(--space-xs-1);
 `;

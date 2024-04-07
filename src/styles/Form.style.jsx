@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
+import { DesktopWidth } from "../constants/Breakpoints";
 
 export const Form = styled.form`
   border-radius: var(--border-radius-medium);
   box-shadow: var(--box-shadow-1);
-  padding: var(--space-l-2);
+  padding: var(--space-xs-2) var(--space-l-2) var(--space-l-2) var(--space-l-2);
   display: flex;
   flex-direction: column;
-  gap: var(--space-base);
   background-color: var(--color-neutral-1);
 `;
 
@@ -23,9 +23,15 @@ export const Button = styled.button`
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-base);
   border-width: var(--border-width-none);
+  margin-top: var(--space-base);
 
   &:hover {
     background-color: var(--color-action-2);
+    cursor: pointer;
+  }
+
+  @media (min-width: ${DesktopWidth}) {
+    min-width: 28.75rem; /* 460px */
   }
 `;
 
@@ -34,6 +40,6 @@ export const Paragraph = styled.p`
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-xs);
   color: var(--color-neutral-5);
-  margin-top: -8px;
+  margin-top: var(--space-xs-2);
   text-align: center;
 `;
