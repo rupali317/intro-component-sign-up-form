@@ -45,7 +45,7 @@ export const Paragraph = styled.p`
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-xs);
-  color: var(--color-neutral-5);
+  color: var(--color-neutral-3);
   margin-top: var(--space-xs-2);
   text-align: center;
 
