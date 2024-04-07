@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "../Input";
 import * as Data from "./data";
+import { MESSAGES } from "../../constants/Strings";
 import * as FormStyles from "../../styles/Form.style";
 
 export const Form = () => {
@@ -13,17 +14,17 @@ export const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     resetFormValidation();
-    checkFormValidationEmptyInputs();
     checkFormValidationInvalidInputs();
+    checkFormValidationEmptyInputs();
   };
 
   // RRC: Ask why [previousValidation.FirstName.EmptyError.HasError]: false, will not work inspite of the []
   const resetFormValidation = () => {
     setFormValidation({
-      firstName: "",
-      lastName: "",
-      emailAddress: "",
-      password: "",
+      firstName: MESSAGES.EMPTY,
+      lastName: MESSAGES.EMPTY,
+      emailAddress: MESSAGES.EMPTY,
+      password: MESSAGES.EMPTY,
     });
   };
 
@@ -32,7 +33,7 @@ export const Form = () => {
       setFormValidation((previousValidation) => {
         return {
           ...previousValidation,
-          firstName: "First name cannot be empty",
+          firstName: MESSAGES.FIRST_NAME_EMPTY_ERROR,
         };
       });
     }
@@ -40,7 +41,7 @@ export const Form = () => {
       setFormValidation((previousValidation) => {
         return {
           ...previousValidation,
-          lastName: "Last name cannot be empty",
+          lastName: MESSAGES.LAST_NAME_EMPTY_ERROR,
         };
       });
     }
@@ -48,7 +49,7 @@ export const Form = () => {
       setFormValidation((previousValidation) => {
         return {
           ...previousValidation,
-          emailAddress: "Email address cannot be empty",
+          emailAddress: MESSAGES.EMAIL_ADDRESS_EMPTY_ERROR,
         };
       });
     }
@@ -56,7 +57,7 @@ export const Form = () => {
       setFormValidation((previousValidation) => {
         return {
           ...previousValidation,
-          password: "Password cannot be empty",
+          password: MESSAGES.PASSWORD_EMPTY_ERROR,
         };
       });
     }
@@ -67,7 +68,7 @@ export const Form = () => {
       setFormValidation((previousValidation) => {
         return {
           ...previousValidation,
-          emailAddress: "Looks like this is not an email",
+          emailAddress: MESSAGES.EMAIL_ADDRESS_INVALID_ERROR,
         };
       });
     }

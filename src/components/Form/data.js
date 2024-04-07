@@ -1,3 +1,5 @@
+import { MESSAGES } from "../../constants/Strings";
+
 export const formData = {
   firstName: "",
   lastName: "",
@@ -6,8 +8,8 @@ export const formData = {
 };
 
 export const formValidation = {
-  firstName: "",
-  lastName: "",
-  emailAddress: "",
-  password: "",
+  firstName: MESSAGES.EMPTY,
+  lastName: MESSAGES.EMPTY,
+  emailAddress: MESSAGES.EMPTY,
+  password: MESSAGES.EMPTY,
 };
