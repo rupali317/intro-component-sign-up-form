@@ -196,6 +196,7 @@ export const DefaultStyles = createGlobalStyle`
         align-items: center;
         padding-top: var(--space-l-3);
         padding-bottom: var(--space-l-3);
+        background-image: url("/images/bg-intro-mobile.png");
     }
 
     main {
@@ -204,17 +205,6 @@ export const DefaultStyles = createGlobalStyle`
         gap: var(--space-xl-3);
         justify-content: center;
         align-items: center;
-    }
-
-    picture {
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-    }
-
-    img {
-        object-fit: cover;
-        width: 100%;
     }
 
     a {
@@ -236,6 +226,10 @@ export const DefaultStyles = createGlobalStyle`
     }
 
     @media (min-width: ${DesktopWidth}) {
+        body {
+            background-image: url("/images/bg-intro-desktop.png");
+        }
+
         main {
             flex-direction: row;
             gap: var(--space-xl-2);
