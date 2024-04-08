@@ -209,6 +209,12 @@ export const DefaultStyles = createGlobalStyle`
     picture {
         position: absolute;
         z-index: -1;
+        width: 100%;
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
     }
 
     a {
