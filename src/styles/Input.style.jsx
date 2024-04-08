@@ -50,6 +50,11 @@ export const Input = styled.input`
       &:focus-visible {
         border: var(--border-width-m) solid var(--color-primary-2);
       }
+
+      ${props.type === "email" &&
+      css`
+        color: var(--color-primary-1);
+      `}
     `}
 
   @media (min-width: ${DesktopWidth}) {
