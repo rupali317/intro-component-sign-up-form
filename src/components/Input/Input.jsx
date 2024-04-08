@@ -12,6 +12,13 @@ export const Input = (props) => {
           name={props.Name}
           value={props.Value}
           onChange={props.handleChange}
+          $isError={props.ErrorMessage !== ""}
+        />
+        <InputStyle.ErrorImage
+          src="/images/icon-error.svg"
+          alt=""
+          role="presentation"
+          className={props.ErrorMessage === "" ? "hide-error" : "show-error"}
         />
       </InputStyle.Section>
       <InputStyle.Error

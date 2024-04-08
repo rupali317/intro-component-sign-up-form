@@ -57,6 +57,7 @@ export const BaseStyles = createGlobalStyle`
         --space-l-1: 1.25rem; /* 20px */
         --space-l-2: 1.5rem; /* 24px */
         --space-l-3: 2rem; /* 32px */
+        --space-l-4: 1.6875rem; /* 27px */
         --space-xl-1: 2.5rem; /* 40px */
         --space-xl-2: 2.8125rem; /* 45px */
         --space-xl-3: 4rem; /* 64px */
@@ -223,6 +224,14 @@ export const DefaultStyles = createGlobalStyle`
     a:focus-visible {
         outline: none;
         box-shadow: var(--box-shadow-3);
+    }
+
+    .show-error {
+        display: block;
+    }
+
+    .hide-error {
+        display: none;
     }
 
     @media (min-width: ${DesktopWidth}) {

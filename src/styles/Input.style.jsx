@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 import { DesktopWidth } from "../constants/Breakpoints";
 
 export const Section = styled.section`
@@ -7,6 +7,7 @@ export const Section = styled.section`
   gap: var(--space-xs-1);
   min-width: 17.4375rem; /* 279px */
   margin-top: var(--space-base);
+  position: relative;
 
   @media (min-width: ${DesktopWidth}) {
     margin-top: var(--space-l-1);
@@ -41,8 +42,29 @@ export const Input = styled.input`
     border-color: var(--color-secondary);
   }
 
+  ${(props) =>
+    props.$isError &&
+    css`
+      border: var(--border-width-m) solid var(--color-primary-2);
+
+      &:focus-visible {
+        border: var(--border-width-m) solid var(--color-primary-2);
+      }
+    `}
+
   @media (min-width: ${DesktopWidth}) {
-    padding: var(--space-s-2) var(--space-l-3);
+    padding: var(--space-s-2) var(--space-l-4) var(--space-s-2) var(--space-l-3);
+  }
+`;
+
+export const ErrorImage = styled.img`
+  position: absolute;
+  width: 1.5rem; //24px;
+  bottom: 1.125rem; //18px;
+  right: 1.375rem; //22px
+
+  @media (min-width: ${DesktopWidth}) {
+    right: 1.8125rem; //29px
   }
 `;
 
@@ -54,12 +76,4 @@ export const Error = styled.i`
   line-height: var(--line-height-normal);
   text-align: right;
   margin-top: var(--space-xs-1);
-
-  &.show-error {
-    display: block;
-  }
-
-  &.hide-error {
-    display: none;
-  }
 `;
