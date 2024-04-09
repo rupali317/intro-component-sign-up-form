@@ -21,7 +21,6 @@ export const Label = styled.label`
   line-height: var(--line-height-base);
 `;
 
-//RRC: Find out if caret width and distance between caret and text can be managed?
 export const Input = styled.input`
   border: var(--border-width-s) solid var(--color-neutral-4);
   border-radius: var(--border-radius-soft);

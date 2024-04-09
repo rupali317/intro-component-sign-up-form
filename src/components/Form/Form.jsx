@@ -18,7 +18,6 @@ export const Form = () => {
     checkFormValidationEmptyInputs();
   };
 
-  // RRC: Ask why [previousValidation.FirstName.EmptyError.HasError]: false, will not work inspite of the []
   const resetFormValidation = () => {
     setFormValidation({
       firstName: MESSAGES.EMPTY,
@@ -76,7 +75,7 @@ export const Form = () => {
 
   const IsEmailValid = (email) => {
     const validEmailRegex =
-      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/; /*RRC: example@com <- will not work, #abc@gmail.com will be valid */
+      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/; /* example@com <- will not work, #abc@gmail.com will be valid */
     return validEmailRegex.test(email);
   };
 
