@@ -42,7 +42,9 @@ Users should be able to:
 
 ##### 2. Mobile version
 
-![Intro component with sign up form mobile](./public/screenshots/Mobile-normal-state.png)
+![Intro component with sign up form mobile - normal state](./public/screenshots/Mobile-normal-state.png)
+
+![Intro component with sign up form mobile - error state](./public/screenshots/Mobile-error-state.png)
 
 ### PageSpeed Insights results
 
