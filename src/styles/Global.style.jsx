@@ -15,6 +15,7 @@ export const BaseStyles = createGlobalStyle`
         --color-neutral-4: hsl(0, 0%, 87%); /* #DEDEDE */
         --color-neutral-5: hsl(247, 25%, 77%); /* #BAB7D4 */
         --color-neutral-6: hsl(0, 0%, 20%) /* #333333 */
+        --color-neutral-7: hsl(0, 0%, 0%); /* #000000 */
 
         /* Typography */
         --font-weight-regular: 400;
@@ -250,7 +251,6 @@ export const IntroSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: var(--space-base);
-  color: var(--color-neutral-2);
   text-align: center;
   max-width: 20.4375rem; /* 327px */
 
@@ -259,12 +259,14 @@ export const IntroSection = styled.section`
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-l);
     letter-spacing: var(--letter-spacing-negative-s);
+    color: var(--color-neutral-2);
   }
 
   p {
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-base);
+    color: var(--color-neutral-7);
   }
 
   @media (min-width: ${DesktopWidth}) {
