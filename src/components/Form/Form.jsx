@@ -134,7 +134,7 @@ export const Form = () => {
       <FormStyles.Button>Claim your free trial</FormStyles.Button>
       <FormStyles.Paragraph>
         By clicking the button, you are agreeing to our{" "}
-        <a href="terms-and-services" target="_blank">
+        <a href="#terms-and-services" target="_blank">
           Terms and Services
         </a>
       </FormStyles.Paragraph>
