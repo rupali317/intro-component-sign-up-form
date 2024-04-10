@@ -36,7 +36,8 @@ export const Input = styled.input`
     color: var(--color-neutral-3);
   }
 
-  &:focus-visible {
+  &:focus-visible,
+  &:hover {
     outline: none;
     border-color: var(--color-secondary);
   }
