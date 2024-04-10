@@ -12,6 +12,7 @@ export const Input = (props) => {
           name={props.Name}
           value={props.Value}
           onChange={props.handleChange}
+          aria-describedby={`error-message-${props.ForId}`}
           $isError={props.ErrorMessage !== ""}
         />
         <InputStyle.ErrorImage
@@ -23,6 +24,8 @@ export const Input = (props) => {
       </InputStyle.Section>
       <InputStyle.Error
         className={props.ErrorMessage === "" ? "hide-error" : "show-error"}
+        id={`error-message-${props.ForId}`}
+        aria-live="assertive"
       >
         {props.ErrorMessage}
       </InputStyle.Error>
