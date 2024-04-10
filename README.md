@@ -84,15 +84,13 @@ Users should be able to:
 
 ### What I learned
 
-TBD
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+- Scenario where the usage of `background-image` is better than that of `<picture>`. `<picture>` has a better performance but it cannot repeat unlike `background-image`.
+- Got more familiar with the essential keyboard shortcut for navigating via VoiceOver.
+- Used non-capturing group in regex expression `(?:com|org|cc)` since it does not need to captured. Capturing group is for extracting information from a string. Therefore in my case, I learnt that non-capturing group is more appropriate.
 
 ### Continued development
 
-TBD
+- Improve the performance by monitoring the metrcis from PageSpeed Insights (especially Total Blocking Time).
 
 ### Useful resources
 
