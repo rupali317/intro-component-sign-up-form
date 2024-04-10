@@ -75,7 +75,7 @@ export const Form = () => {
 
   const IsEmailValid = (email) => {
     const validEmailRegex =
-      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/; /* example@com <- will not work, #abc@gmail.com will be valid */
+      /^[^\s@._-](?:[._-]{0,1}[A-Za-z0-9]+)*@[^\s@.](?:[-_]{0,1}[A-Za-z0-9]+)*\.(?:com|org|cc)$/i; /* example@com <- will not work, #abc@gmail.com will be valid */
     return validEmailRegex.test(email);
   };
 
