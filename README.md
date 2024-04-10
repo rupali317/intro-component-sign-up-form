@@ -90,7 +90,7 @@ Users should be able to:
 
 ### Continued development
 
-- Improve the performance by monitoring the metrcis from PageSpeed Insights (especially Total Blocking Time).
+- Improve the performance by monitoring the metrics from PageSpeed Insights (especially Total Blocking Time).
 
 ### Useful resources
 
