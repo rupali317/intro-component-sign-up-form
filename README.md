@@ -33,26 +33,28 @@ Users should be able to:
 
 ##### 1. Desktop version
 
-![Intro component with sign up form desktop](./public/)
+![Intro component with sign up form desktop - normal state](./public/screenshots/Desktop-normal-state.png)
+
+![Intro component with sign up form desktop - error state](./public/screenshots/Desktop-error-state.png)
 
 ##### 2. Mobile version
 
-![Intro component with sign up form mobile](./public/)
+![Intro component with sign up form mobile](./public/screenshots/Mobile-normal-state.png)
 
 ### PageSpeed Insights results
 
-[Mobile version]()
+[Mobile version](https://pagespeed.web.dev/analysis/https-intro-component-sign-up-form-rc-netlify-app/lx7n0fty6v?form_factor=mobile)
 
-![PageSpeed insights mobile](./public/)
+![PageSpeed insights mobile](./public/screenshots/Page-speed-insights-mobile.png)
 
-[Desktop version]()
+[Desktop version](https://pagespeed.web.dev/analysis/https-intro-component-sign-up-form-rc-netlify-app/lx7n0fty6v?form_factor=desktop)
 
-![PageSpeed insights desktop](./public/)
+![PageSpeed insights desktop](./public/screenshots/Page-speed-insights-desktop.png)
 
 ### Links
 
-- Solution URL: [Intro component with sign up form Github URL]()
-- Live Site URL: [Intro component with sign up form live URL]()
+- Solution URL: [Intro component with sign up form Github URL](https://github.com/rupali317/intro-component-sign-up-form)
+- Live Site URL: [Intro component with sign up form live URL](https://intro-component-sign-up-form-rc.netlify.app/)
 
 ## My process
 
@@ -60,6 +62,8 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- Javascript
+- Regex expression
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
@@ -87,8 +91,8 @@ TBD
 
 ### Useful resources
 
-- []() - This helped me for
-- []( - This is an amazing article which helped me finally understand
+- [Screen Reader Basics: VoiceOver -- A11ycasts #07](https://www.youtube.com/watch?v=5R-6WvAihms) - This resource was suggested y Grace Snow. This resource provided the essentials on how to use VoiceOver.
+- [xmatter's valid email address format](https://help.xmatters.com/ondemand/trial/valid_email_format.htm#:~:text=A%20valid%20email%20address%20consists,com%22%20is%20the%20email%20domain) - It provided me a basis on how to construct my regex expression for the email. I used this a my north star especially since I wanted to create the regex expression from scratch.
 
 ## Author
 
@@ -97,5 +101,5 @@ TBD
 
 ## Acknowledgments
 
-- A big thanks to Grace Snow for guiding on the proper usage of Voiceover screen reader and how to improve the accessibility related to the form's error messages.
+- A big thanks to Grace Snow for guiding on the proper usage of VoiceOver screen reader and how to improve the accessibility related to the form's error messages.
 - I express my gratitude towards my mentor - Deborah for the insightful code review session
