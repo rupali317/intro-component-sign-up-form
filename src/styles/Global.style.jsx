@@ -218,6 +218,16 @@ export const DefaultStyles = createGlobalStyle`
         text-decoration: none;
     }
 
+    .visually-hidden {
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
     a:hover {
         text-decoration: underline;
     }
