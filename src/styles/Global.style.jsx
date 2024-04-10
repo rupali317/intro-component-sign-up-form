@@ -247,7 +247,7 @@ export const DefaultStyles = createGlobalStyle`
     }
 `;
 
-export const IntroSection = styled.section`
+export const IntroSection = styled.header`
   display: flex;
   flex-direction: column;
   gap: var(--space-base);
